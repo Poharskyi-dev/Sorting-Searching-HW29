@@ -1,38 +1,26 @@
 package com.gmail.box.avpog;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.gmail.box.avpog.Tools.Sorting;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+
+public class AppTest {
+
+    @Test
+    void testArrIntSort() {
+        //given
+
+        int[] arr = {2, 0, 5, 11, 8, 10};
+        int[] expectedArr = {0, 2, 5, 8, 10, 11};
+        //when
+
+        Sorting.bubbleIntSort(arr);
+
+        //then
+
+        assertArrayEquals(expectedArr, arr);
+
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
